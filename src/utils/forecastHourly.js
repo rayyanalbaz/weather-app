@@ -1,4 +1,3 @@
-const res = require('express/lib/response')
 const request = require('request')
 
 const forecast = (lang, lat, callback) => {
@@ -14,12 +13,9 @@ const forecast = (lang, lat, callback) => {
             body.currently.temperature +
             " degrees out. There is a " +
             body.currently.precipProbability +
-            "% chance of rain" +
-            body.daily.data[0].summary+".\n"+
-            ".\n Hourly: "+
-            body.hourly.summary+".\n"+
-            ".\n ALERTS: "+
-            body.alerts[0].title      
+            "% chance of rain. " +
+            body.daily.data[0].summary
+            +"\n\r Hourly: "
         ) 
       }
     }) 
